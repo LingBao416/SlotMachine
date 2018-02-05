@@ -84,6 +84,15 @@ class ViewController: UIViewController ,UIPickerViewDelegate, UIPickerViewDataSo
         }
     }
     }
+    
+    @IBAction func fillClicked(_ sender: UIButton) {
+        
+        var ownedMoney = Int(ownMoney.text!)!
+        
+        ownedMoney = ownedMoney + 200
+        ownMoney.text = String(ownedMoney)
+    }
+    
     // returns the number of 'columns' to display.
     @available(iOS 2.0, *)
     public func numberOfComponents(in pickerView: UIPickerView) -> Int{
