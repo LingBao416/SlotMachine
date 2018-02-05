@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 extension String {
     func emojiToImage() -> UIImage? {
         let size = CGSize(width: 30, height: 35)
@@ -27,10 +28,10 @@ class ViewController: UIViewController ,UIPickerViewDelegate, UIPickerViewDataSo
     @IBOutlet weak var pickerView: UIPickerView!
     @IBOutlet weak var resultLabel: UILabel!
     var imageArray:[UIImage]!
-
+    var audioPlayer:AVAudioPlayer!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        playBgMusic()
         imageArray = ["🍎".emojiToImage()!,
                       "😍".emojiToImage()!,
                       "🐮".emojiToImage()!,
@@ -119,7 +120,30 @@ class ViewController: UIViewController ,UIPickerViewDelegate, UIPickerViewDataSo
         let imageView = UIImageView(image: image)
         return imageView
     }
-    
+    func playBgMusic(){
+        
+        let musicPath = Bundle.main.path(forResource: "bm", ofType: "mp3")
+        
+        //指定音乐路径
+        
+        let url = NSURL(fileURLWithPath: musicPath!)
+        
+        do {
+            try audioPlayer = AVAudioPlayer(contentsOf: url as URL)
+        } catch {
+            print("Player not available")
+        }
+          
+        
+        audioPlayer.numberOfLoops = -1
+        
+        audioPlayer.volume = 1
+        
+        audioPlayer.prepareToPlay()
+        
+        audioPlayer.play()
+        
+    }
 
     
 
