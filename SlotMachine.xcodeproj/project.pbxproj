@@ -16,6 +16,8 @@
 		A7A0FB6E201EED0A0055833B /* SlotMachineUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A0FB6D201EED0A0055833B /* SlotMachineUITests.swift */; };
 		A7A0FBB820250F680055833B /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = A7A0FBB720250F680055833B /* background.png */; };
 		A7A0FBBA2028F9980055833B /* bm.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A7A0FBB92028F9980055833B /* bm.mp3 */; };
+		A7BE2651202905E200E04103 /* spin.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A7BE2650202905E200E04103 /* spin.mp3 */; };
+		A7BE265320290AC600E04103 /* win.wav in Resources */ = {isa = PBXBuildFile; fileRef = A7BE265220290AC500E04103 /* win.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,8 @@
 		A7A0FB6F201EED0A0055833B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A7A0FBB720250F680055833B /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = background.png; path = ../../../Downloads/background.png; sourceTree = "<group>"; };
 		A7A0FBB92028F9980055833B /* bm.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bm.mp3; sourceTree = "<group>"; };
+		A7BE2650202905E200E04103 /* spin.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = spin.mp3; sourceTree = "<group>"; };
+		A7BE265220290AC500E04103 /* win.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = win.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +108,8 @@
 				A7A0FB4D201EED0A0055833B /* AppDelegate.swift */,
 				A7A0FB4F201EED0A0055833B /* ViewController.swift */,
 				A7A0FBB92028F9980055833B /* bm.mp3 */,
+				A7BE265220290AC500E04103 /* win.wav */,
+				A7BE2650202905E200E04103 /* spin.mp3 */,
 				A7A0FB51201EED0A0055833B /* Main.storyboard */,
 				A7A0FBB720250F680055833B /* background.png */,
 				A7A0FB54201EED0A0055833B /* Assets.xcassets */,
@@ -238,7 +244,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A7BE2651202905E200E04103 /* spin.mp3 in Resources */,
 				A7A0FB58201EED0A0055833B /* LaunchScreen.storyboard in Resources */,
+				A7BE265320290AC600E04103 /* win.wav in Resources */,
 				A7A0FBBA2028F9980055833B /* bm.mp3 in Resources */,
 				A7A0FBB820250F680055833B /* background.png in Resources */,
 				A7A0FB55201EED0A0055833B /* Assets.xcassets in Resources */,

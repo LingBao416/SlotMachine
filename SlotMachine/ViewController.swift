@@ -2,6 +2,8 @@
 //  ViewController.swift
 //  SlotMachine
 //  Copyright © 2018年 Centennial College. All rights reserved.
+//  Ling Bao 300901785
+//  Sumit Ganju
 //
 
 import UIKit
@@ -52,6 +54,7 @@ class ViewController: UIViewController ,UIPickerViewDelegate, UIPickerViewDataSo
     }
     //Spin function pickview rolls
     @IBAction func buttonClicked(_ sender: UIButton) {
+        playSpinMusic()
         var win = false
         var numInRow = -1
         var lastVal = -1
@@ -76,6 +79,7 @@ class ViewController: UIViewController ,UIPickerViewDelegate, UIPickerViewDataSo
                 ownnedMoney = ownnedMoney + 1000
                 winMoney.text = String(winnedMoney)
                 ownMoney.text = String(ownnedMoney)
+                playWinMusic()
                 win = true
             }
     }
@@ -85,11 +89,9 @@ class ViewController: UIViewController ,UIPickerViewDelegate, UIPickerViewDataSo
         }
     }
     }
-    
+    //fill function (add 200 on clicked)
     @IBAction func fillClicked(_ sender: UIButton) {
-        
         var ownedMoney = Int(ownMoney.text!)!
-        
         ownedMoney = ownedMoney + 200
         ownMoney.text = String(ownedMoney)
     }
@@ -114,12 +116,14 @@ class ViewController: UIViewController ,UIPickerViewDelegate, UIPickerViewDataSo
     func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat{
         return 32
     }
-    
+    //set image for pickerview
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
         let image = imageArray[row]
         let imageView = UIImageView(image: image)
         return imageView
     }
+    
+    //set background music for app
     func playBgMusic(){
         
         let musicPath = Bundle.main.path(forResource: "bm", ofType: "mp3")
@@ -144,7 +148,55 @@ class ViewController: UIViewController ,UIPickerViewDelegate, UIPickerViewDataSo
         audioPlayer.play()
         
     }
-
+    //set spin music for button
+    func playSpinMusic(){
+        
+        let musicPath = Bundle.main.path(forResource: "spin", ofType: "mp3")
+        
+        //Music Path
+        
+        let url = NSURL(fileURLWithPath: musicPath!)
+        
+        do {
+            try audioPlayer = AVAudioPlayer(contentsOf: url as URL)
+        } catch {
+            print("Player not available")
+        }
+        
+        
+        audioPlayer.numberOfLoops = 1
+        
+        audioPlayer.volume = 1
+        
+        audioPlayer.prepareToPlay()
+        
+        audioPlayer.play()
+        
+    }
+    func playWinMusic(){
+        
+        let musicPath = Bundle.main.path(forResource: "win", ofType: "wav")
+        
+        //Music Path
+        
+        let url = NSURL(fileURLWithPath: musicPath!)
+        
+        do {
+            try audioPlayer = AVAudioPlayer(contentsOf: url as URL)
+        } catch {
+            print("Player not available")
+        }
+        
+        
+        audioPlayer.numberOfLoops = 1
+        
+        audioPlayer.volume = 1
+        
+        audioPlayer.prepareToPlay()
+        
+        audioPlayer.play()
+        
+    }
     
 
     
