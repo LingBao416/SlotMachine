@@ -1,13 +1,12 @@
 //
 //  ViewController.swift
 //  SlotMachine
-//
-//  Created by 包翎 on 2018/1/29.
 //  Copyright © 2018年 Centennial College. All rights reserved.
 //
 
 import UIKit
 import AVFoundation
+//extension function convert emoji to string
 extension String {
     func emojiToImage() -> UIImage? {
         let size = CGSize(width: 30, height: 35)
@@ -51,6 +50,7 @@ class ViewController: UIViewController ,UIPickerViewDelegate, UIPickerViewDataSo
         pickerView.delegate = self
         pickerView.dataSource = self
     }
+    //Spin function pickview rolls
     @IBAction func buttonClicked(_ sender: UIButton) {
         var win = false
         var numInRow = -1
@@ -124,7 +124,7 @@ class ViewController: UIViewController ,UIPickerViewDelegate, UIPickerViewDataSo
         
         let musicPath = Bundle.main.path(forResource: "bm", ofType: "mp3")
         
-        //指定音乐路径
+        //Music Path
         
         let url = NSURL(fileURLWithPath: musicPath!)
         
